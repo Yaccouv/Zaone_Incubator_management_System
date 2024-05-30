@@ -2,7 +2,7 @@
 #include <WiFi.h>
 #include <FirebaseESP32.h>
 
-#define DHTPIN 21     // Pin where the DHT22 is connected (change as needed)
+#define DHTPIN 21     
 #define DHTTYPE DHT22 // DHT 22 (AM2302) sensor type
 
 DHT dht(DHTPIN, DHTTYPE);
