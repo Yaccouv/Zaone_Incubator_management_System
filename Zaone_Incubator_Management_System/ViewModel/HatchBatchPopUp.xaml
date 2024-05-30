@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"  
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Zaone_Incubator_Management_System.ViewModel.HatchBatchPopUp"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"  
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"  
+             BackgroundColor="Transparent">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation   
+                      PositionIn="Center"  
+                      PositionOut="Center"  
+                      ScaleIn="1.2"  
+                      ScaleOut="0.8"  
+                      DurationIn="400"  
+                      DurationOut="300"  
+                      EasingIn="SinOut"  
+                      EasingOut="SinIn"  
+      HasBackgroundAnimation="False"/>
+    </pages:PopupPage.Animation>
+    <StackLayout VerticalOptions="Center"  Padding="20,0" HorizontalOptions="FillAndExpand" >
+        <Frame CornerRadius="10" Padding="0" BackgroundColor="White" >
+            <StackLayout Padding="10">
+                <Label Text="Zaone Poultry Farm" TextColor="Black" FontSize="20" Margin="0,50,0,0" HorizontalOptions="Center"></Label>
+                <ScrollView>
+                    <StackLayout>
+                        <Label x:Name="incubatorname" Text="" TextColor="Black"/>
+                        <Label x:Name="EggNumber" Text="" TextColor="Black"/>
+                        <StackLayout Orientation="Vertical">
+
+                            <StackLayout VerticalOptions="StartAndExpand">
+                                <Entry x:Name="txtEggNumber" Placeholder="Enter Number of Hatched Eggs" />
+
+                                <StackLayout HorizontalOptions="Center" Grid.Column="1" Margin="0,30,0,0" Orientation="Horizontal" Spacing="10">
+                                    <Button Text="Cancle" Clicked="btnCancle_OnClicked" BackgroundColor="#A0A0A0" />
+                                    <FlexLayout JustifyContent="SpaceEvenly" HeightRequest="35">
+                                        <BoxView HorizontalOptions="FillAndExpand" HeightRequest="29" WidthRequest="1" Color="Gray"/>
+                                    </FlexLayout>
+                                    <Button Text="Finish" Clicked="btnFinish_OnClicked" BackgroundColor="#74ab15" />
+                                </StackLayout>
+
+                            </StackLayout>
+
+
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>  

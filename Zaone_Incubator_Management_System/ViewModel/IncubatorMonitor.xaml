@@ -1,0 +1,171 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zaone_Incubator_Management_System.ViewModel.IncubatorMonitor">
+
+    <ContentPage.Content>
+
+        <Grid>
+            <ScrollView>
+                <StackLayout x:Name="me">
+
+                    <!-- Title -->
+                    <Label Text="Temperature Humidity and Egg Turning" 
+                   FontSize="20" 
+                   BackgroundColor="#E5F0E5" 
+                   TextColor="Black"
+                   Padding="15"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="CenterAndExpand" 
+                   Margin="5,10,5,10" />
+                    <Label Text="" x:Name="lblname" FontSize="18" HorizontalOptions="Center" />
+
+                    <!-- Temperature and Humidity -->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Left side (Temperature) -->
+                        <Frame x:Name="tempFrame" Grid.Row="0" Grid.Column="0" BackgroundColor="#E5F0E5" CornerRadius="10" Padding="10" Margin="10">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="temp2.png" WidthRequest="30" VerticalOptions="Center" />
+                                <Label x:Name="TemperatureLabel" FontSize="18" Text="Temperature:" VerticalOptions="Center" />
+                            </StackLayout>
+                        </Frame>
+
+                        <!-- Right side (Humidity) -->
+                        <Frame x:Name="humiFrame" Grid.Row="0" Grid.Column="1" HeightRequest="50" BackgroundColor="#E5F0E5" CornerRadius="10" Padding="10" Margin="10">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="humi2.png" WidthRequest="30" VerticalOptions="Center" />
+                                <Label x:Name="HumidityLabel" Text="Humidity:" FontSize="18" VerticalOptions="Center" />
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+
+                    <!-- Set Humidity Slider and Label -->
+                    <Label Text="Set Humidity" FontSize="18" HorizontalOptions="Center"/>
+                    <Slider Margin="20,0,20,0" MaximumTrackColor="Gray" Value="{Binding Humidity, Mode=TwoWay}" Maximum="100" Minimum="0" MinimumTrackColor="RoyalBlue" ThumbColor="RoyalBlue"/>
+                    <Label Text="{Binding Humidity, StringFormat='{0:F1}%'}" FontSize="18" Margin="30,0,0,20" HorizontalOptions="Start"/>
+
+                    <!-- Set Temperature Slider and Label -->
+                    <Label Text="Set Temperature" FontSize="18" HorizontalOptions="Center"/>
+                    <Slider Margin="20,0,20,0" MaximumTrackColor="Gray" Value="{Binding Temperature, Mode=TwoWay}" MinimumTrackColor="DarkOrange" Maximum="50" Minimum="0" ThumbColor="DarkOrange"/>
+                    <Label Text="{Binding Temperature, StringFormat='{0:F1}°C'}" FontSize="18" Margin="30,0,0,20" HorizontalOptions="Start"/>
+
+                    <!-- TimePicker for Rotation Time -->
+                    <!-- Timer Picker -->
+                    <Picker x:Name="TimerPicker" Margin="20,0,20,0" Title="Select Egg Rotation Time" SelectedIndexChanged="OnTimerPickerSelectedIndexChanged">
+                        <Picker.Items>
+                            <x:String>30 seconds</x:String>
+                            <x:String>1 minute</x:String>
+                            <x:String>2 minutes</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <!-- Display the saved Temperature -->
+
+
+
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <!-- Heating Element Indicator -->
+                        <StackLayout>
+                            <Frame x:Name="HeatingElementFrame"
+               WidthRequest="50"
+               HeightRequest="50"
+               CornerRadius="50"
+               BackgroundColor="#E5F0E5"
+               HorizontalOptions="Center"
+               VerticalOptions="Center">
+                                <Label x:Name="HeatingElementLabel"
+                   Text=""
+                   TextColor="Gray"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center" />
+                            </Frame>
+                            <Label Text="Heating Element" HorizontalOptions="Center" FontSize="14" />
+                        </StackLayout>
+
+                        <!-- Blower Indicator -->
+                        <StackLayout>
+                            <Frame x:Name="BlowerFrame"
+               WidthRequest="50"
+               HeightRequest="50"
+               CornerRadius="50"
+               BackgroundColor="#E5F0E5"
+               HorizontalOptions="Center"
+               VerticalOptions="Center">
+                                <Label x:Name="BlowerLabel"
+                   Text=""
+                   TextColor="Gray"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center" />
+                            </Frame>
+                            <Label Text="Blower" HorizontalOptions="Center" FontSize="14" />
+                        </StackLayout>
+
+                        <!-- Egg Rotation Indicator -->
+                        <StackLayout>
+                            <Frame x:Name="EggRotationFrame"
+               WidthRequest="50"
+               HeightRequest="50"
+               CornerRadius="50"
+               BackgroundColor="#E5F0E5"
+               HorizontalOptions="Center"
+               VerticalOptions="Center">
+                                <Label x:Name="EggRotationLabel"
+                   Text="Off"
+                   TextColor="Gray"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center" />
+                            </Frame>
+                            <Label Text="Egg Rotation" HorizontalOptions="Center" FontSize="14" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <!-- Other Labels -->
+
+                    <Button x:Name="BtnSave"  HeightRequest="60" Text="Set Incubator" CornerRadius="20" Clicked="OnSaveSensorDataClicked" BackgroundColor="#74ab15" TextColor="White" FontSize="20" Margin="30,20,30,0" />
+
+
+                    <!-- Display the saved Temperature -->
+                    <Frame BackgroundColor="#E5F0E5" CornerRadius="10" Padding="10" Margin="10" HorizontalOptions="CenterAndExpand">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Saved Temperature:" FontSize="18" HorizontalOptions="Center"/>
+                            <Label x:Name="SavedTemperatureLabel" Text="" FontSize="18" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Display the saved Humidity -->
+                    <Frame BackgroundColor="#E5F0E5" CornerRadius="10" Padding="10" Margin="10" HorizontalOptions="CenterAndExpand">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Saved Humidity:" FontSize="18" HorizontalOptions="Center"/>
+                            <Label x:Name="SavedHumidityLabel" Text="" FontSize="18" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Display the saved Rotation Time -->
+                    <Frame BackgroundColor="#E5F0E5" CornerRadius="10" Padding="10" Margin="10" HorizontalOptions="CenterAndExpand">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Saved Rotation Time:" FontSize="18" HorizontalOptions="Center"/>
+                            <Label x:Name="SavedRotationTimeLabel" Text="" FontSize="18" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </Frame>
+
+                </StackLayout>
+
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

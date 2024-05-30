@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zaone_Incubator_Management_System.ViewModel.Register">
+
+    <StackLayout>
+        <StackLayout>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                <Image x:Name="imgBanner" Aspect="AspectFit" Source="p2.png"  VerticalOptions="Start"></Image>
+
+
+                <Frame HasShadow="True"  CornerRadius="30" BorderColor="WhiteSmoke" BackgroundColor="white"  WidthRequest="350"  HeightRequest="20" Margin="20,20,20,15">
+                    <StackLayout Orientation="Horizontal">
+                        <Image  Source="user1.png" WidthRequest="30" HorizontalOptions="Start"/>
+                        <Entry x:Name="txtUsernamee" HorizontalTextAlignment="Start" FontSize="15" PlaceholderColor="#4A4B4d" TextColor="Black" Placeholder="Username" Margin="15,-30,30,-30"/>
+                    </StackLayout>
+                </Frame>
+                <Frame  CornerRadius="30" BorderColor="WhiteSmoke" BackgroundColor="white" HasShadow="True" WidthRequest="350"  HeightRequest="20" Margin="20,0,20,0">
+                    <StackLayout Orientation="Horizontal">
+                        <Image  Source="pass.png" WidthRequest="30" HorizontalOptions="Start"/>
+                        <Entry x:Name="txtPassword" IsPassword="True" HorizontalTextAlignment="Start" FontSize="15"  PlaceholderColor="#4A4B4d" TextColor="Black" Placeholder="Password" Margin="15,-30,30,-30"/>
+                        <ImageButton BackgroundColor="Transparent"
+                         Source="eyeclose.png" HorizontalOptions="End" Margin="110,0,0,0"  HeightRequest="100" Clicked="HidePass_Clicked"/>
+                    </StackLayout>
+                </Frame>
+                <Frame HasShadow="True"  CornerRadius="30" BorderColor="WhiteSmoke" BackgroundColor="white"  WidthRequest="350"  HeightRequest="20" Margin="20,15,20,15">
+                    <StackLayout Orientation="Horizontal">
+                        <Image  Source="pass.png" WidthRequest="30" HorizontalOptions="Start"/>
+                        <Entry x:Name="txtConfirm" IsPassword="True" HorizontalTextAlignment="Start" FontSize="15" PlaceholderColor="#4A4B4d" TextColor="Black" Placeholder="Confirm Password" Margin="15,-30,30,-30"/>
+                        <ImageButton BackgroundColor="Transparent"
+                         Source="eyeclose.png" HorizontalOptions="End" Margin="52,0,0,0"  HeightRequest="100" Clicked="HidePass1_Clicked"/>
+                    </StackLayout>
+                </Frame>
+                <Frame  CornerRadius="30" BorderColor="WhiteSmoke" BackgroundColor="white" HasShadow="True" WidthRequest="350"  HeightRequest="20" Margin="20,0,20,10">
+                    <StackLayout Orientation="Horizontal">
+                        <Image  Source="email2.png" WidthRequest="30" HorizontalOptions="Start"/>
+                        <Entry x:Name="txtEmail" HorizontalTextAlignment="Start" FontSize="15"  PlaceholderColor="#4A4B4d" TextColor="Black" Placeholder="Email                                " Margin="15,-30,30,-30"/>
+                    </StackLayout>
+                </Frame>
+
+                <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <Grid HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <ImageButton Clicked="imgRegister_Tapped" WidthRequest="160" CornerRadius="50" HorizontalOptions="Center" VerticalOptions="Center" Source="bt1.png" Grid.Row="0"/>
+                        <Label HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" Text="Create Account" TextColor="White" Grid.Row="0">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="btnRegister_Tapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                </StackLayout>
+
+
+
+                <StackLayout HorizontalOptions="Center" Grid.Column="1" Margin="0,2,0,0" Orientation="Horizontal" Spacing="10">
+                    <Label Text="Already Have Account?" HorizontalTextAlignment="start" FontSize="18" FontFamily="metropolis"  TextColor="#4A4B4d" Margin="20,0, 0,0"/>
+                    <FlexLayout JustifyContent="SpaceEvenly" HeightRequest="25">
+                        <BoxView HorizontalOptions="FillAndExpand" HeightRequest="26" WidthRequest="1" Color="#4A4B4d"/>
+                    </FlexLayout>
+                    <Label Text="Login"  FontAttributes = "Bold" FontSize="18" FontFamily="Cabin" TextColor="#4A4B4d">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="LoginBtn_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                <StackLayout HorizontalOptions="Center" Grid.Column="1" Margin="0,2,0,0" Orientation="Horizontal" Spacing="10">
+                    <Label Text="Sign up with" HorizontalTextAlignment="start" FontSize="18" FontFamily="metropolis"  TextColor="#4A4B4d" Margin="20,0, 0,0"/>
+                </StackLayout>
+
+
+
+                <StackLayout  AbsoluteLayout.LayoutBounds="0.5,502,400,100" AbsoluteLayout.LayoutFlags="XProportional" Orientation="Horizontal" HorizontalOptions="Center">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Frame Grid.Row="0"
+           Grid.Column="1"
+           Grid.ColumnSpan="2"
+           Padding="0"
+           HorizontalOptions="CenterAndExpand"
+           VerticalOptions="Center"
+           CornerRadius="50"
+           IsClippedToBounds="True"
+           HeightRequest="50"
+           WidthRequest="50"
+           BackgroundColor="LightGray">
+                            <Image Source="fb33.png"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand" />
+                        </Frame>
+
+
+                    </Grid>
+
+                    <Grid Margin="10,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Frame Grid.Row="0"
+           Grid.Column="1"
+           Grid.ColumnSpan="2"
+           Padding="0"
+           HorizontalOptions="CenterAndExpand"
+           VerticalOptions="Center"
+           CornerRadius="50"
+           IsClippedToBounds="True"
+           HeightRequest="50"
+           WidthRequest="50"
+           BackgroundColor="LightGray">
+                            <Image Source="g.png"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand" />
+                        </Frame>
+
+
+                    </Grid>
+
+                    <Grid Margin="10,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Frame Grid.Row="0"
+           Grid.Column="1"
+           Grid.ColumnSpan="2"
+           Padding="0"
+           HorizontalOptions="CenterAndExpand"
+           VerticalOptions="Center"
+           CornerRadius="50"
+           IsClippedToBounds="True"
+           HeightRequest="50"
+           WidthRequest="50"
+           BackgroundColor="LightGray">
+                            <Image Source="t.png"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand" />
+                        </Frame>
+
+
+                    </Grid>
+
+                </StackLayout>
+
+
+
+
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+
+
+
+</ContentPage>

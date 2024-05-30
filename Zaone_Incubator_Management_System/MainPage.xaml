@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zaone_Incubator_Management_System.MainPage">
+    <StackLayout>
+        <!-- Button to trigger motor rotation -->
+        <Button x:Name="RotateMotorButton"
+                Text="Rotate Motor"
+                Clicked="RotateMotorButton_Clicked"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"/>
+
+        <!-- Label to display motor rotation status -->
+        <Label x:Name="StatusLabel"
+               Text=""
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"/>
+    </StackLayout>
+</ContentPage>

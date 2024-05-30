@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zaone_Incubator_Management_System.ViewModel.Login">
+
+
+    <StackLayout>
+        <StackLayout>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start" Spacing="0">
+                <Image x:Name="imgBanner" Aspect="AspectFit" Source="p2.png"  VerticalOptions="Start"></Image>
+                <Label Margin="20,20,0,10" Text="Welcome" FontAttributes = "Bold" FontSize="30" HorizontalTextAlignment="Start" FontFamily="metropolis"  TextColor="#4A4B4d"/>
+                <Label Margin="20,0,0,0" Text="Login into Your Account" FontSize="20" TextColor="Gray" HorizontalTextAlignment="Start" ></Label>
+
+
+                <Frame HasShadow="True"  CornerRadius="30" BorderColor="WhiteSmoke" BackgroundColor="white"  WidthRequest="350"  HeightRequest="20" Margin="20,40,20,15">
+                    <StackLayout Orientation="Horizontal">
+                        <Image  Source="user1.png" WidthRequest="30" HorizontalOptions="Start"/>
+                        <Entry x:Name="txtUsername" HorizontalTextAlignment="Start" FontSize="15" PlaceholderColor="#4A4B4d" TextColor="Black" Placeholder="Username" Margin="15,-30,30,-30"/>
+                    </StackLayout>
+                </Frame>
+                <Frame  CornerRadius="30" BorderColor="WhiteSmoke" BackgroundColor="white" HasShadow="True" WidthRequest="350"  HeightRequest="20" Margin="20,0,20,10">
+                    <StackLayout Orientation="Horizontal">
+                        <Image  Source="pass.png" WidthRequest="30" HorizontalOptions="Start"/>
+                        <Entry x:Name="txtPassword" HorizontalTextAlignment="Start" FontSize="15" IsPassword="True" PlaceholderColor="#4A4B4d" TextColor="Black" Placeholder="Password" Margin="15,-30,30,-30"/>
+                        <ImageButton BackgroundColor="Transparent"
+                         Source="eyeclose.png" HorizontalOptions="End" Margin="110,0,0,0"  HeightRequest="100" Clicked="HidePass_Clicked"/>
+                    </StackLayout>
+                </Frame>
+
+
+
+                <Label Text="Forgot Password?" HorizontalTextAlignment="End" FontSize="18" FontFamily="metropolis"  TextColor="Gray" Margin="0,5, 20,0"/>
+                
+                <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <Grid HorizontalOptions="Center" VerticalOptions="Center" Margin="0,50,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <ImageButton Clicked="imgLogin_Tapped" WidthRequest="160" CornerRadius="50" HorizontalOptions="Center" VerticalOptions="Center" Source="bt1.png" Grid.Row="0"/>
+                        <Label HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" Text="LOGIN" TextColor="White" Grid.Row="0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="btnLogin_Tapped" />
+                        </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center" Grid.Column="1" Margin="0,30,0,0" Orientation="Horizontal" Spacing="10">
+                    <Label Text="Don't Have Account?" FontSize="22" FontFamily="Cabin"  TextColor="Gray"/>
+                    <FlexLayout JustifyContent="SpaceEvenly" HeightRequest="25">
+                        <BoxView HorizontalOptions="FillAndExpand" HeightRequest="29" WidthRequest="1" Color="Gray"/>
+                    </FlexLayout>
+                    <Label Text="Sign Up" FontAttributes = "Bold" FontSize="22" FontFamily="Cabin" TextColor="#4A4B4d">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Signup_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+
+
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

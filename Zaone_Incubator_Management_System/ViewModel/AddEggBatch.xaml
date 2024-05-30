@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="Zaone_Incubator_Management_System.ViewModel.AddEggBatch">
+
+    <ContentPage.Title>
+        Add New Incubator and Batch
+    </ContentPage.Title>
+
+    <ContentPage.Content>
+        <Frame  Padding="20" BackgroundColor="WhiteSmoke">
+            <StackLayout>
+                <StackLayout>
+                    <!-- Picker -->
+                    <StackLayout Orientation="Horizontal" Padding="0, 0, 0, 0">
+                        <StackLayout Margin="0,0,0,0">
+                            <Picker x:Name="dataDropdown" Title="Select Incubator" TextColor="Gray" VerticalOptions="CenterAndExpand" WidthRequest="300">
+                            <!-- Adjust the WidthRequest as needed -->
+                            <!-- Add PickerItems here if needed -->
+                        </Picker>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                            <ImageButton Clicked="Button_Clicked" WidthRequest="30" CornerRadius="30" Source="plus3.png" VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+
+
+
+                    <!-- Incubator Capacity -->
+                   
+                    <StackLayout HorizontalOptions="Start" Grid.Column="1" Margin="0,0,0,0" Orientation="Horizontal" Spacing="10">
+                        <Label Text="Incubator Capacity: " FontSize="22" FontFamily="Cabin"  TextColor="Gray"/>
+                        
+                        <Label HorizontalTextAlignment="Start" x:Name="capacity" Text="" FontSize="22" TextColor="Gray" Margin="0,0,0,0"/>
+                    </StackLayout>
+
+                    <!-- Start Date -->
+                    <Label Text="Start Date:" FontSize="18" TextColor="Gray" Margin="0,20,0,0"/>
+                    <DatePicker IsEnabled="False" x:Name="startDatePicker" />
+                    <TimePicker IsEnabled="False" x:Name="startTimePicker" />
+
+
+                    <!-- Hatching Date -->
+                    <Label Text="Hatching Date:" FontSize="18" TextColor="Gray" Margin="0,20,0,0"/>
+                    <DatePicker IsEnabled="False" x:Name="hatchingDatePicker" />
+                    <TimePicker IsEnabled="False" x:Name="hatchingTimePicker" />
+
+
+
+
+                    <Label IsVisible="False" x:Name="lblIncubatorID"/>
+                    <!-- Eggs number -->
+                    <Label Text="Eggs number:" FontSize="18" TextColor="Gray" Margin="0,20,0,0"/>
+                    <Frame BorderColor="Gray"  Padding="5">
+                        <Entry x:Name="txtNumber" BackgroundColor="WhiteSmoke"  Placeholder="Enter number of eggs" FontSize="18" />
+                    </Frame>
+
+
+                    <!-- Save Button -->
+                    <RelativeLayout>
+    
+                        <Button
+        x:Name="BtnSave"
+        Text="Save Egg Batch"
+        Clicked="btnSave_clicked"
+        BackgroundColor="#74ab15"
+        TextColor="White"
+        FontSize="20"
+        HeightRequest="60"
+        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2}"
+        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.4}" />
+                    </RelativeLayout>
+
+
+
+
+                   
+
+                </StackLayout>
+            </StackLayout>
+            
+            
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

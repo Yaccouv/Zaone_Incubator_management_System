@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zaone_Incubator_Management_System.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="SelectedTextColor">#00FF00</Color>
+            <OnPlatform x:Key="FontAwesomeRegular" x:TypeArguments="x:String">
+                <On Platform="iOS" Value="FontAwesome5ProRegular" />
+                <On Platform="Android" Value="FontAwesome5ProRegular.otf#Regular" />
+            </OnPlatform>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

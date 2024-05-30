@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+             x:Class="Zaone_Incubator_Management_System.ViewModel.ChartPage">
+
+    <ContentPage.Title>
+        Incubator Report
+    </ContentPage.Title>
+
+    <Grid>
+        <ScrollView>
+            <StackLayout>
+
+                <StackLayout>
+                    <ActivityIndicator x:Name="loadingIndicator"
+                       IsRunning="False"
+                       IsVisible="False"
+                       Color="#97f097"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand" />
+
+                    <Label x:Name="loadingLabel"
+           Text="Please Wait..."
+           FontSize="16"
+           TextColor="Black"
+           VerticalOptions="CenterAndExpand"
+           HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+
+                <Frame x:Name="incubatorNFrame" HasShadow="False"
+                   CornerRadius="10"
+                   Padding="10"
+                   Margin="10" BackgroundColor="#E5F0E5">
+                    <Label x:Name="incubatorN" TextColor="Black" FontSize="18" />
+                </Frame>
+
+                <!-- Line Chart -->
+                <Frame x:Name="lineChartFrame" HasShadow="False"
+               CornerRadius="10"
+               Padding="10"
+               Margin="10">
+                    <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+                        <!-- Title Layout -->
+                        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+                            <Label Text="Temperature and Humidity Chart" FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                            <Label Text="Average Temperature and Humidity for 21 days" FontSize="12" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                        </StackLayout>
+
+                        <!-- Chart Layout -->
+                        <ScrollView Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                <oxy:PlotView x:Name="oxyPlotViewLineChart" BackgroundColor="#E5F0E5" HeightRequest="400" WidthRequest="1000"/>
+                            </StackLayout>
+                        </ScrollView>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Pie Chart -->
+                <Frame x:Name="pieChartFrame" HasShadow="False"
+               CornerRadius="10"
+               Padding="10"
+               Margin="10">
+                    <oxy:PlotView x:Name="oxyPlotViewPieChart" BackgroundColor="#E5F0E5" HeightRequest="300" />
+                </Frame>
+
+                <!-- Styled Labels -->
+                <Frame x:Name="hatchedeggsFrame" HasShadow="False"
+                   CornerRadius="10"
+                   Padding="10"
+                   Margin="10">
+                    <Label x:Name="hatchedeggslabel" TextColor="Black" FontSize="16" />
+                </Frame>
+
+                <Frame x:Name="unhatchedeggsFrame" HasShadow="False"
+                   CornerRadius="10"
+                   Padding="10"
+                   Margin="10">
+                    <Label x:Name="unhatchedeggslabel" TextColor="Black" FontSize="16" />
+                </Frame>
+
+                <Frame x:Name="totaleggsFrame" HasShadow="False"
+                   CornerRadius="10"
+                   Padding="10"
+                   Margin="10">
+                    <Label x:Name="totaleggs" TextColor="Black" FontSize="16" />
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
