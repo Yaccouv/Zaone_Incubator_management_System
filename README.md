@@ -1,3 +1,25 @@
+# Egg Incubator Management System
+
+## Technologies Used
+- **Frontend & Backend**: C# Xamarin  
+- **Hardware Programming Language**: C++  
+- **Database**: Firebase  
+- **Hardware Components**: DHT22 sensor, 12V DC motor  
+- **Email Integration**: Gmail  
+
+---
+
+## Abstract
+
+Poultry holds a significant position in agriculture and is one of the most consumed products. There is a huge demand for poultry products, and relying on natural methods for hatching eggs has proven inefficient, leading to the development of technologies to increase poultry production.
+
+This project focuses on the development of an egg incubator management system for Zaone Poultry Farm. The design ensures optimal environmental conditions for successful egg hatching. Key parameters such as temperature, humidity, and egg rotation are maintained at optimal levels to enhance hatchability rates.
+
+The system integrates multiple technologies, including sensors and microcontrollers. The microcontrollers control environmental conditions like temperature and humidity based on user input or feedback from sensors such as the DHT22. The system can be remotely monitored via an Android or desktop application.
+
+Chicken eggs will be used as a case study to test and evaluate the system, with a strong assurance that it can accurately hatch eggs while preventing potential problems that might harm them.
+ 
+
 # 1. Appendices
 
 ## 1.1 Appendix A – User Manual
